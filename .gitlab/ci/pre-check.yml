@@ -1,0 +1,17 @@
+.check_labels_script: &check_labels_script |
+  if [[ "$CI_MERGE_REQUEST_LABELS" =~ "unit_test" && "$CI_MERGE_REQUEST_LABELS" =~ "example_test" ]]; then
+    echo "unit_test and example_test labels exist"
+  else
+    echo "warning: either unit_test or example_test label is missing. Please add both labels to the MR for the pipeline to succeed"
+    exit 1
+  fi
+
+check_labels:
+  image: $CI_DOCKER_REGISTRY/esp32-ci-env$BOT_DOCKER_IMAGE_TAG
+  stage: pre_check
+  extends:
+    - .rules:ref:check-label
+  before_script:
+    - echo "skip default before_script"
+  script:
+    - *check_labels_script

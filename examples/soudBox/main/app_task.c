@@ -448,8 +448,8 @@ void http_rec_check_url(char *request, uint32_t request_len)
         // .url ="https://testdhome-api.scstit.com:9443/parse/openapi/parse/asr",
         // .url = "https://testdhome-api.scstit.com:9443/parse/openapi/parse/dialogue",
         //.url = "http://116.205.135.166/aihome/base/api",
-        .url = "http://139.159.141.213/aihome/base/api",
-        
+        // .url = "http://139.159.141.213/aihome/base/api",
+         .url = "http://139.159.141.213/aihome/base/api",
         .event_handler = _http_event_handler,
         .timeout_ms = 20000,
         .buffer_size = 16*1024,
@@ -556,7 +556,7 @@ void http_getNetwork_time()
 {
     esp_http_client_config_t config = {
         // .url ="https://testdhome-api.scstit.com:9443/parse/openapi/parse/asr",
-        .url = "http://116.205.135.166/aihome/base/getCurrentTimeMillis",
+        .url = "http://139.159.141.213/aihome/base/getCurrentTimeMillis",
         .event_handler = _http_getTime_handler,
         .timeout_ms = 30000,
     };

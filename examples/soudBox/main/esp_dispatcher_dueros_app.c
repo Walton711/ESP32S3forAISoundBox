@@ -532,7 +532,7 @@ void duer_app_init(void)
                                 ACTION_EXE_TYPE_REC_WAV_TURN_ON, recorder_action_rec_wav_turn_on);
                               
     ESP_LOGI(TAG, "[Step 5.1] Register wanted player execution type");
-     esp_dispatcher_reg_exe_func(pp_dispatcher, dueros_speaker->player, ACTION_EXE_TYPE_RAW_PLAY, player_raw_play);
+    esp_dispatcher_reg_exe_func(pp_dispatcher, dueros_speaker->player, ACTION_EXE_TYPE_RAW_PLAY, player_raw_play);
     esp_dispatcher_reg_exe_func(pp_dispatcher, dueros_speaker->player, ACTION_EXE_TYPE_AUDIO_PLAY, player_action_play);
     esp_dispatcher_reg_exe_func(pp_dispatcher, dueros_speaker->player, ACTION_EXE_TYPE_AUDIO_PAUSE, player_action_pause);
     esp_dispatcher_reg_exe_func(pp_dispatcher, dueros_speaker->player, ACTION_EXE_TYPE_AUDIO_RESUME, player_action_resume);
@@ -604,7 +604,7 @@ void duer_app_init(void)
     
     vTaskDelay(pdMS_TO_TICKS(3000));
     
-    // vTaskDelay(pdMS_TO_TICKS(10000));
+    vTaskDelay(pdMS_TO_TICKS(10000));
     
     printf("网路状态：g_wifiState = %d\n", g_wifiState);
     if(g_wifiState == WIFI_SERV_EVENT_CONNECTED)
@@ -621,13 +621,13 @@ void duer_app_init(void)
     // led_blink_onoff(1);
     vTaskDelay(pdMS_TO_TICKS(10000));
     // file_task_init();
-    ESP_LOGI(TAG, "[Step 8.0] Initialize Done");
+    ESP_LOGI(TAG, "[Step 8.0] Initialize Done,123");
 
     app_mqtt_start();
     
-    http_test();
-    // i2c_led_init();
-    // vTaskDelay(pdMS_TO_TICKS(10000));
+    //http_test();
+    i2c_led_init();
+    vTaskDelay(pdMS_TO_TICKS(10000));
     // pp_music_play("https://static-sichuanshutian-open.haifanwu.com/WaterMark/hifive/COPYRIGHT/B7B810B0F232/mp3_128/B7B810B0F232.mp3?param=LhcJJT4uNa4AkWr1dspm2PyrGqDBIXG0AAQ7GSRebcY51l1Dq671Iqdx3TyNExqYjGAysaAHGgJrgRpOdytzY2tbsYK8U-tbc8qroHr-sB5KZxM8mBwYkwSrzeitr2BsUcXnQ6W6uHKicZPiN8fin82s_tHEUTz-TQQTsJ_4IKA&sign=5bd2343662d500922611a0d51b7a3975&t=1724614574",5,0);
     // pp_music_play("file://spiffs/clock/1.MP3", 6, 0);
     // pp_music_play("http://116.205.135.166/dingding/system/networkdisconnect.wav",5,0);

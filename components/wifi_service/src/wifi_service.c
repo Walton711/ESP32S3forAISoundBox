@@ -419,8 +419,8 @@ static void wifi_task(void *pvParameters)
                             memcpy(&wifi_cfg, &serv->info, sizeof(wifi_config_t));
                         }
                     }
-                    memcpy(wifi_cfg.sta.ssid, "NiuniuWifi", 11);
-                    memcpy(wifi_cfg.sta.password, "1234567890", 11);
+                    // memcpy(wifi_cfg.sta.ssid, "NiuniuWifi", 11);
+                    // memcpy(wifi_cfg.sta.password, "1234567890", 11);
                     // memcpy(wifi_cfg.sta.ssid, "QHJMF", 6);
                     // memcpy(wifi_cfg.sta.password, "Qhjmf0817", 10);
                     // memcpy(wifi_cfg.sta.ssid, "Walton_", 8);
@@ -431,6 +431,10 @@ static void wifi_task(void *pvParameters)
                     // memcpy(wifi_cfg.sta.password, "aistar88792356", 15);
                     // memcpy(wifi_cfg.sta.ssid, "scstit", 7);
                     // memcpy(wifi_cfg.sta.password, "scstit12306", 12);
+                    memcpy(wifi_cfg.sta.ssid, "wangjian", 9);
+                    memcpy(wifi_cfg.sta.password, "wj12345678", 11);
+                    // memcpy(wifi_cfg.sta.ssid, "wangjian", 9);
+                    // memcpy(wifi_cfg.sta.password, "wj12345678", 11);
                     
                     ESP_LOGI(TAG, "Connect to wifi ssid: %s, pwd: %s", wifi_cfg.sta.ssid, wifi_cfg.sta.password);
                     configure_wifi_sta_mode(&wifi_cfg);
